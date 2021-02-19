@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btnPasswordGenerate"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="32dp"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewUpperCase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/upper_case"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Switch
+                android:id="@+id/switchUpperCase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toEndOf="@+id/textViewUpperCase"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewLowerCase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/lower_case"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewUpperCase" />
+
+            <Switch
+                android:id="@+id/switchLowerCase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewLowerCase"
+                app:layout_constraintTop_toBottomOf="@+id/switchUpperCase" />
+
+            <TextView
+                android:id="@+id/textViewNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/includes_numbers"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLowerCase" />
+
+            <Switch
+                android:id="@+id/switchNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/switchLowerCase"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textViewNumber"
+                app:layout_constraintTop_toBottomOf="@+id/switchLowerCase" />
+
+            <TextView
+                android:id="@+id/textViewSpecialCharacter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/includes_special_characters"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNumber" />
+
+            <Switch
+                android:id="@+id/switchSpecialCharacter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewSpecialCharacter"
+                app:layout_constraintEnd_toEndOf="@+id/switchNumber"
+                app:layout_constraintTop_toBottomOf="@+id/switchNumber" />
+
+            <TextView
+                android:id="@+id/textViewMaxLength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/max_length"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewSpecialCharacter" />
+
+            <EditText
+                android:id="@+id/EditTextMaxLength"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/switchSpecialCharacter"
+                app:layout_constraintTop_toBottomOf="@+id/switchSpecialCharacter" />
+
+            <EditText
+                android:id="@+id/EditTextPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:enabled="false"
+                android:importantForAutofill="noExcludeDescendants"
+                android:inputType="text"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/EditTextMaxLength" />
+
+
+            <LinearLayout
+                android:id="@+id/liner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/EditTextPassword">
+
+                <Button
+                    android:id="@+id/btnGenerate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="Generate"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/btnCopy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorGray"
+                    android:text="Copy"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
